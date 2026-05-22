@@ -696,7 +696,49 @@ I promise you'll get back EVERY PENNY you spent within 48 hours.
         
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7ed95e36afb64af494010479cc72b04b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"6b641164dd4746b19d2f205822c236aa","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-</body>
+
+	<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const releaseTime = 3206; // 53:26
+
+    // ESCONDE
+    const hiddenEls = document.querySelectorAll(
+        ".video-cta-container, [data-cid='1517']"
+    );
+
+    hiddenEls.forEach(el => {
+        el.style.display = "none";
+    });
+
+    // PROCURA O VIDEO
+    const waitVideo = setInterval(() => {
+
+        const video = document.querySelector("video");
+
+        if (video) {
+
+            clearInterval(waitVideo);
+
+            video.addEventListener("timeupdate", () => {
+
+                if (video.currentTime >= releaseTime) {
+
+                    hiddenEls.forEach(el => {
+                        el.style.display = "block";
+                    });
+
+                }
+
+            });
+
+        }
+
+    }, 1000);
+
+});
+</script>
+	</body>
 </html>
 
 
