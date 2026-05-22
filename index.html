@@ -97,7 +97,8 @@
 #c1516-ie5udt-2-2-3-3-3-2-3,
 #c1517-ihq7zj-3{
 
-    display:none !important;
+    opacity:0 !important;
+    visibility:hidden !important;
 
 }
 
@@ -703,33 +704,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const releaseTime = 10;
 
+    const selectors = [
+
+        "#c1516-c1381-c1108-c914-c910-c409-c104-ie5udt-2-2-3-3-3",
+
+        "#c1516-ie5udt-2-2-3-3-3-2-2",
+
+        "#c1516-ie5udt-2-2-3-3-3-2-3",
+
+        "#c1517-ihq7zj-3"
+
+    ];
+
     function showElements() {
 
-        console.log("LIBERANDO");
+        console.log("LIBEROU");
 
-        const elements = [
-
-            "#c1516-c1381-c1108-c914-c910-c409-c104-ie5udt-2-2-3-3-3",
-
-            "#c1516-ie5udt-2-2-3-3-3-2-2",
-
-            "#c1516-ie5udt-2-2-3-3-3-2-3",
-
-            "#c1517-ihq7zj-3"
-
-        ];
-
-        elements.forEach(selector => {
+        selectors.forEach(selector => {
 
             const el = document.querySelector(selector);
 
             if (el) {
 
-                el.style.setProperty(
-                    "display",
-                    "flex",
-                    "important"
-                );
+                el.style.removeProperty("opacity");
+
+                el.style.removeProperty("visibility");
 
             }
 
