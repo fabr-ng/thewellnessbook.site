@@ -111,7 +111,11 @@
 
 #c1516-c1381-c1108-c914-c910-c409-c104-ilsueh,
 #c1517-ihq7zj-3{
+
     display:none !important;
+    visibility:hidden !important;
+    opacity:0 !important;
+
 }
 
 </style>
@@ -770,47 +774,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const releaseTime = 5;
+    const releaseTime = 5000; // 5 segundos
 
-    const offer = document.querySelector(
-        "#c1516-c1381-c1108-c914-c910-c409-c104-ilsueh"
+    const offer = document.getElementById(
+        "c1516-c1381-c1108-c914-c910-c409-c104-ilsueh"
     );
 
-    const guarantee = document.querySelector(
-        "#c1517-ihq7zj-3"
+    const guarantee = document.getElementById(
+        "c1517-ihq7zj-3"
     );
 
-    const interval = setInterval(() => {
+    function showElements() {
 
-        const currentTime = window.vslCurrentTime || 0;
+        console.log("LIBERANDO");
 
-        console.log("Tempo:", currentTime);
+        if (offer) {
 
-        if (currentTime >= releaseTime) {
-
-            console.log("LIBEROU");
-
-            if (offer) {
-                offer.style.setProperty(
-                    "display",
-                    "flex",
-                    "important"
-                );
-            }
-
-            if (guarantee) {
-                guarantee.style.setProperty(
-                    "display",
-                    "flex",
-                    "important"
-                );
-            }
-
-            clearInterval(interval);
+            offer.style.display = "flex";
+            offer.style.visibility = "visible";
+            offer.style.opacity = "1";
 
         }
 
-    }, 1000);
+        if (guarantee) {
+
+            guarantee.style.display = "flex";
+            guarantee.style.visibility = "visible";
+            guarantee.style.opacity = "1";
+
+        }
+
+    }
+
+    setTimeout(showElements, releaseTime);
 
 });
 
