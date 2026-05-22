@@ -1,13 +1,10 @@
 
+
 <!-- Hi Advertiser! Create your own funnels using ElasticFunnels.io -->
 
 <html class="onsite">
 
-	<style>
-.delayed-section{
-    display:none;
-}
-</style>
+	
     <head>
                     <link rel="stylesheet" type="text/css" href="https://elasticfunnels.b-cdn.net/web/build/assets/main-BZf78Bvs.css"           data-fallback="/assets/main.css"/>
 <script>
@@ -99,11 +96,7 @@
 
 
                     
-<style>
-.delayed-section{
-    display:none;
-}
-</style>
+
 <style>
 
 #c1516-c1381-c1108-c914-c910-c409-c104-ilsueh,
@@ -113,6 +106,14 @@
 
 </style>
 		
+
+<style>
+#c1516-c1381-c1108-c914-c910-c409-c104-ilsueh,
+#c1517-ihq7zj-3{
+    display:none !important;
+}
+</style>
+
 </head>
     <body id="wrapper" data-brand-id="132">
         
@@ -761,7 +762,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
-	</body>
+	<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"6b641164dd4746b19d2f205822c236aa","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const releaseTime = 5;
+
+    const offer = document.querySelector(
+        "#c1516-c1381-c1108-c914-c910-c409-c104-ilsueh"
+    );
+
+    const guarantee = document.querySelector(
+        "#c1517-ihq7zj-3"
+    );
+
+    function showElements() {
+
+        if (offer) {
+            offer.style.setProperty("display", "flex", "important");
+        }
+
+        if (guarantee) {
+            guarantee.style.setProperty("display", "flex", "important");
+        }
+
+    }
+
+    const interval = setInterval(() => {
+
+        if (
+            window.smartplayer &&
+            window.smartplayer.instances &&
+            window.smartplayer.instances.length
+        ) {
+
+            const player = window.smartplayer.instances[0];
+
+            clearInterval(interval);
+
+            player.on("timeupdate", () => {
+
+                const current = player.video.currentTime;
+
+                if (current >= releaseTime) {
+                    showElements();
+                }
+
+            });
+
+        }
+
+    }, 1000);
+
+});
+</script>
+
+</body>
 </html>
 
 
