@@ -704,24 +704,22 @@ I promise you'll get back EVERY PENNY you spent within 48 hours.
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const releaseTime = 10;
+    const releaseTime = 5;
 
     const selectors = [
 
-        // bundle 1
-        "#c1516-c1381-c1108-c914-c910-c409-c104-ie5udt-2-2-3-3-3",
 
-        // bundle 3
-        "#c1516-ie5udt-2-2-3-3-3-2",
+    "#c1516-c1381-c1108-c914-c910-c409-c104-ie5udt-2-2-3-3-3",
 
-        // bundle 2
-        "#c1516-ie5udt-2-2-3-3-3-2-2",
+    "#c1516-ie5udt-2-2-3-3-3-2",
 
-        // bundle 6
-        "#c1516-ie5udt-2-2-3-3-3-2-3",
+    "#c1516-ie5udt-2-2-3-3-3-2-2",
 
-        // garantia
-        "#c1517-ihq7zj-3"
+    "#c1516-ie5udt-2-2-3-3-3-2-3",
+
+    "#c1517-ihq7zj-3"
+
+];
 
     ];
 
@@ -739,15 +737,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 el.style.removeProperty("visibility");
 
-                el.style.removeProperty("pointer-events");
-
             }
 
         });
 
     }
 
-    setTimeout(showElements, releaseTime * 10);
+    setTimeout(showElements, releaseTime * 1000);
 
 });
 
