@@ -725,7 +725,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (video.currentTime >= releaseTime) {
 
                     hiddenEls.forEach(el => {
-                        el.style.display = "block";
+                        el.style.removeProperty("display");
                     });
 
                 }
