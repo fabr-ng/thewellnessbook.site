@@ -543,11 +543,8 @@ I promise you'll get back EVERY PENNY you spent within 48 hours.
 	  startRandomInterval();
 	}
 	var attempts = 0;
-	var elsHiddenList = [];
 	var elsDisplayed = false;
-	var elsHidden = document.querySelectorAll(classToDisplay);
-	var alreadyDisplayedKey = `alreadyElsDisplayed${secondsToDisplay}
-`;
+	var alreadyDisplayedKey = `alreadyElsDisplayed${secondsToDisplay}`;
 	var alreadyElsDisplayed = null;
 	try {
 	  alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
@@ -555,14 +552,17 @@ I promise you'll get back EVERY PENNY you spent within 48 hours.
 	catch (e) {
 	  console.warn('Failed to read data from localStorage: ', e);
 	}
-	setTimeout(function () {
-	  elsHiddenList = Array.prototype.slice.call(elsHidden);
-	}
-			   , 0);
+
 	function showHiddenElements() {
 	  startAllNotifications();
 	  elsDisplayed = true;
-	  elsHiddenList.forEach((e) => e.style.display = "block");
+	  
+	  const blocoOfertas = document.getElementById("if2ayg");
+	  const blocoGarantia = document.querySelector('[data-cid="1517"]');
+	  
+	  if(blocoOfertas) blocoOfertas.style.setProperty("display", "block", "important");
+	  if(blocoGarantia) blocoGarantia.style.setProperty("display", "block", "important");
+
 	  try {
 		localStorage.setItem(alreadyDisplayedKey, true);
 	  }
@@ -570,12 +570,44 @@ I promise you'll get back EVERY PENNY you spent within 48 hours.
 		console.warn('Failed to save data in localStorage: ', e);
 	  }
 	}
+
 	function startWatchVideoProgress() {
+	  const blocoOfertas = document.getElementById("if2ayg");
+	  const blocoGarantia = document.querySelector('[data-cid="1517"]');
+	  
+	  if(!elsDisplayed) {
+		if(blocoOfertas) blocoOfertas.style.setProperty("display", "none", "important");
+		if(blocoGarantia) blocoGarantia.style.setProperty("display", "none", "important");
+	  }
+
 	  if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
 		if (attempts >= 10) return;
 		attempts += 1;
 		return setTimeout(function () {
 		  startWatchVideoProgress();
+		}, 1000);
+	  }
+	  if (!smartplayer.instances[0]) return;
+	  
+	  smartplayer.instances[0].on('timeupdate', () => {
+		if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+		if (smartplayer.instances[0].video.currentTime < secondsToDisplay) {
+			if(blocoOfertas) blocoOfertas.style.setProperty("display", "none", "important");
+			if(blocoGarantia) blocoGarantia.style.setProperty("display", "none", "important");
+			return;
+		}
+		showHiddenElements();
+	  });
+	}
+
+	if (alreadyElsDisplayed === 'true') {
+	  setTimeout(function () {
+		showHiddenElements();
+	  }, 100);
+	}
+	else {
+	  startWatchVideoProgress();
+	}
 		}
 						  , 1000);
 	  }
