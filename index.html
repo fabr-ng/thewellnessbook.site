@@ -700,18 +700,18 @@ I promise you'll get back EVERY PENNY you spent within 48 hours.
 	<script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const releaseTime = 3206; // 53:26
+    const releaseTime = 3206;
 
-    // ESCONDE
     const hiddenEls = document.querySelectorAll(
         ".video-cta-container, [data-cid='1517']"
     );
 
+    // ESCONDE
     hiddenEls.forEach(el => {
         el.style.display = "none";
     });
 
-    // PROCURA O VIDEO
+    // ESPERA O VIDEO
     const waitVideo = setInterval(() => {
 
         const video = document.querySelector("video");
@@ -725,7 +725,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (video.currentTime >= releaseTime) {
 
                     hiddenEls.forEach(el => {
+
+                        // REMOVE O DISPLAY NONE
                         el.style.removeProperty("display");
+
                     });
 
                 }
