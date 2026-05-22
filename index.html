@@ -108,10 +108,12 @@
 		
 
 <style>
+
 #c1516-c1381-c1108-c914-c910-c409-c104-ilsueh,
 #c1517-ihq7zj-3{
     display:none !important;
 }
+
 </style>
 
 </head>
@@ -765,6 +767,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"6b641164dd4746b19d2f205822c236aa","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 
 <script>
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const releaseTime = 5;
@@ -777,45 +780,40 @@ document.addEventListener("DOMContentLoaded", function () {
         "#c1517-ihq7zj-3"
     );
 
-    function showElements() {
-
-        if (offer) {
-            offer.style.setProperty("display", "flex", "important");
-        }
-
-        if (guarantee) {
-            guarantee.style.setProperty("display", "flex", "important");
-        }
-
-    }
-
     const interval = setInterval(() => {
 
-        if (
-            window.smartplayer &&
-            window.smartplayer.instances &&
-            window.smartplayer.instances.length
-        ) {
+        const currentTime = window.vslCurrentTime || 0;
 
-            const player = window.smartplayer.instances[0];
+        console.log("Tempo:", currentTime);
+
+        if (currentTime >= releaseTime) {
+
+            console.log("LIBEROU");
+
+            if (offer) {
+                offer.style.setProperty(
+                    "display",
+                    "flex",
+                    "important"
+                );
+            }
+
+            if (guarantee) {
+                guarantee.style.setProperty(
+                    "display",
+                    "flex",
+                    "important"
+                );
+            }
 
             clearInterval(interval);
-
-            player.on("timeupdate", () => {
-
-                const current = player.video.currentTime;
-
-                if (current >= releaseTime) {
-                    showElements();
-                }
-
-            });
 
         }
 
     }, 1000);
 
 });
+
 </script>
 
 </body>
