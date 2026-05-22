@@ -726,8 +726,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (video.currentTime >= releaseTime) {
 
                     hiddenEls.forEach(el => {
-                        el.style.removeProperty("display");
-                    });
+
+    el.style.display = "block";
+
+    const hiddenChildren = el.querySelectorAll("*");
+
+    hiddenChildren.forEach(child => {
+        child.style.removeProperty("display");
+    });
+
+});
 
                 }
 
