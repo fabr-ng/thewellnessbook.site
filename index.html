@@ -104,7 +104,15 @@
     display:none;
 }
 </style>
+<style>
 
+#c1516-c1381-c1108-c914-c910-c409-c104-ilsueh,
+#c1517-ihq7zj-3{
+    display:none !important;
+}
+
+</style>
+		
 </head>
     <body id="wrapper" data-brand-id="132">
         
@@ -707,11 +715,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const releaseTime = 3206;
 
-    const hiddenEls = document.querySelectorAll(".delayed-section");
+    const offer = document.querySelector(
+        "#c1516-c1381-c1108-c914-c910-c409-c104-ilsueh"
+    );
 
-    hiddenEls.forEach(el => {
-        el.style.display = "none";
-    });
+    const guarantee = document.querySelector(
+        "#c1517-ihq7zj-3"
+    );
 
     const waitVideo = setInterval(() => {
 
@@ -725,17 +735,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (video.currentTime >= releaseTime) {
 
-                    hiddenEls.forEach(el => {
+                    if (offer) {
+                        offer.style.setProperty(
+                            "display",
+                            "flex",
+                            "important"
+                        );
+                    }
 
-    el.style.display = "block";
-
-    const hiddenChildren = el.querySelectorAll("*");
-
-    hiddenChildren.forEach(child => {
-        child.style.removeProperty("display");
-    });
-
-});
+                    if (guarantee) {
+                        guarantee.style.setProperty(
+                            "display",
+                            "flex",
+                            "important"
+                        );
+                    }
 
                 }
 
