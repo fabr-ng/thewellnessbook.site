@@ -92,7 +92,9 @@
 
 <style>
 
-#c1516-c1381-c1108-c914-c910-c409-c104-ilsueh,
+#c1516-c1381-c1108-c914-c910-c409-c104-ie5udt-2-2-3-3-3,
+#c1516-ie5udt-2-2-3-3-3-2-2,
+#c1516-ie5udt-2-2-3-3-3-2-3,
 #c1517-ihq7zj-3{
 
     display:none !important;
@@ -699,67 +701,43 @@ I promise you'll get back EVERY PENNY you spent within 48 hours.
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 49:29 = 2969 segundos
-    const releaseTime = 15;
-
-    const offer = document.getElementById(
-        "c1516-c1381-c1108-c914-c910-c409-c104-ilsueh"
-    );
-
-    const guarantee = document.getElementById(
-        "c1517-ihq7zj-3"
-    );
+    const releaseTime = 10;
 
     function showElements() {
 
-        console.log("LIBERANDO OFERTA");
+        console.log("LIBERANDO");
 
-        if (offer) {
+        const elements = [
 
-            offer.style.setProperty(
-                "display",
-                "flex",
-                "important"
-            );
+            "#c1516-c1381-c1108-c914-c910-c409-c104-ie5udt-2-2-3-3-3",
 
-        }
+            "#c1516-ie5udt-2-2-3-3-3-2-2",
 
-        if (guarantee) {
+            "#c1516-ie5udt-2-2-3-3-3-2-3",
 
-            guarantee.style.setProperty(
-                "display",
-                "flex",
-                "important"
-            );
+            "#c1517-ihq7zj-3"
 
-        }
+        ];
 
-    }
+        elements.forEach(selector => {
 
-    setInterval(() => {
+            const el = document.querySelector(selector);
 
-        try {
+            if (el) {
 
-            // VTurb
-            const currentTime =
-                window.vslCurrentTime ||
-                0;
-
-            console.log(currentTime);
-
-            if (currentTime >= releaseTime) {
-
-                showElements();
+                el.style.setProperty(
+                    "display",
+                    "flex",
+                    "important"
+                );
 
             }
 
-        } catch(e) {
+        });
 
-            console.log(e);
+    }
 
-        }
-
-    }, 1000);
+    setTimeout(showElements, releaseTime * 1000);
 
 });
 
