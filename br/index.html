@@ -539,6 +539,48 @@ I promise you'll get back EVERY PENNY you spent within 48 hours.
         
 
         
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7ed95e36afb64af494010479cc72b04b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+   
+	<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7ed95e36afb64af494010479cc72b04b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
+		<style>
+#iwy30h, #c1657-iqh28r, #purchase-notification { display: none !important; }
+#iwy30h.glpro-revelado, #c1657-iqh28r.glpro-revelado, #purchase-notification.glpro-revelado { display: block !important; }
+</style>
+<script>
+(function(){
+  var TEMPO_REVELAR = 2030;
+  var IDS = ['iwy30h', 'c1657-iqh28r', 'purchase-notification'];
+  var jaRevelou = false;
+
+  function revelar(){
+    if(jaRevelou) return;
+    jaRevelou = true;
+    IDS.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.classList.add('glpro-revelado');
+    });
+    console.log('[MBP] Revelado em ' + TEMPO_REVELAR + 's');
+  }
+
+  var tentativas = 0;
+  var interval = setInterval(function(){
+    tentativas++;
+    if(tentativas > 120){ clearInterval(interval); return; }
+    if(typeof smartplayer === 'undefined') return;
+    if(!smartplayer.instances || !smartplayer.instances.length) return;
+    var player = smartplayer.instances[0];
+    if(!player || !player.on) return;
+    clearInterval(interval);
+    console.log('[MBP] Monitorando video, revelar aos ' + TEMPO_REVELAR + 's');
+    player.on('timeupdate', function(){
+      if(jaRevelou) return;
+      var t = player.video && player.video.currentTime;
+      if(typeof t === 'number' && t >= TEMPO_REVELAR) revelar();
+    });
+  }, 500);
+})();
+</script>
 </body>
+</html>
+	</body>
 </html>
