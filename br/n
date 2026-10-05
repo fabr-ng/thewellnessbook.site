@@ -1,1 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoria TikTok Shop | Faça Sua Primeira Venda</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Configuração de Tema do Tailwind com gradientes e cores customizadas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        ttDark: '#080c14',
+                        ttCard: '#0f172a',
+                        ttBorder: '#1e293b',
+                        ttCyan: '#00f2fe',
+                        ttPink: '#fe2c55',
+                    },
+                    backgroundImage: {
+                        'glow-gradient': 'radial-gradient(circle at 50% 0%, rgba(0, 242, 254, 0.15) 0%, rgba(254, 44, 85, 0.1) 40%, rgba(8, 12, 20, 0) 70%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #080c14;
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Efeito Neon e Gradientes Customizados */
+        .text-gradient {
+            background: linear-gradient(135deg, #00f2fe 0%, #fe2c55 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, #fe2c55 0%, #ff0050 50%, #00f2fe 100%);
+            background-size: 200% auto;
+            transition: all 0.4s ease;
+        }
+        .btn-gradient:hover {
+            background-position: right center;
+            box-shadow: 0 0 25px rgba(254, 44, 85, 0.5), 0 0 10px rgba(0, 242, 254, 0.3);
+            transform: translateY(-2px);
+        }
 
+        .border-gradient {
+            border-image: linear-gradient(to right, #00f2fe, #fe2c55) 1;
+        }
+
+        .glow-box {
+            box-shadow: 0 0 30px -5px rgba(254, 44, 85, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-ttDark text-gray-100 antialiased overflow-x-hidden">
+
+    <!-- Header / Navbar Minimalista -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-ttDark/80 backdrop-blur-md border-b border-ttBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-ttPink to-ttCyan flex items-center justify-center font-bold text-black text-lg">
+                    <i class="fa-brands fa-tiktok text-white text-base"></i>
+                </div>
+                <span class="font-extrabold text-xl tracking-tight text-white">TikTok<span class="text-ttCyan">Shop</span><span class="text-ttPink">Pro</span></span>
+            </div>
+            <a href="#oferta" class="hidden sm:inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold text-white bg-ttCard hover:bg-slate-800 border border-ttBorder rounded-full transition-all duration-300 hover:border-ttPink/50">
+                <span>Garantir Minha Vaga</span>
+                <i class="fa-solid fa-arrow-right text-xs text-ttCyan"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-glow-gradient">
+        <!-- Elementos decorativos de fundo (Luzes neon) -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-ttPink/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 left-1/3 w-64 h-64 bg-ttCyan/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <!-- Badge de Destaque -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ttCard border border-ttBorder shadow-lg mb-8 animate-pulse">
+                <span class="flex h-2 w-2 rounded-full bg-ttPink"></span>
+                <span class="text-xs sm:text-sm font-semibold tracking-wide text-gray-300">
+                    Consultoria Individual & 100% Prática
+                </span>
+            </div>
+
+            <!-- Headline Principal -->
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight mb-6">
+                Destrave a sua <span class="text-gradient">Primeira Venda</span> no TikTok Shop nos Próximos Dias
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-normal leading-relaxed">
+                Pare de postar vídeos sem resultado. Descubra a estrutura exata de produtos virais, roteiros que convertem e como dominar o algoritmo do TikTok Shop para faturar sem precisar de milhares de seguidores.
+            </p>
+
+            <!-- CTA Principal -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                <a href="#oferta" class="w-full sm:w-auto btn-gradient text-white text-lg font-bold px-8 py-4 rounded-xl shadow-lg flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-rocket text-xl"></i>
+                    <span>GARANTIR VAGA NA CONSULTORIA</span>
+                </a>
+            </div>
+
+            <!-- Prova Social Rápida / Indicadores -->
+            <div class="pt-8 border-t border-ttBorder/60 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-3">
+                    <p class="text-2xl sm:text-3xl font-extrabold text-ttCyan">+100</p>
+                    <p class="text-xs sm:text-sm text-gray-400 font-medium">Alunos Destravados</p>
+                </div>
+                <div class="p-3">
+                    <p class="text-2xl sm:text-3xl font-extrabold text-ttPink">1 para 1</p>
+                    <p class="text-xs sm:text-sm text-gray-400 font-medium">Atendimento Exclusivo</p>
+                </div>
+                <div class="p-3">
+                    <p class="text-2xl sm:text-3xl font-extrabold text-ttCyan">100%</p>
+                    <p class="text-xs sm:text-sm text-gray-400 font-medium">Foco em Resultados</p>
+                </div>
+                <div class="p-3">
+                    <p class="text-2xl sm:text-3xl font-extrabold text-ttPink">Zero</p>
+                    <p class="text-xs sm:text-sm text-gray-400 font-medium">Seguidores Necessários</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Para Quem É a Consultoria -->
+    <section class="py-20 bg-ttDark border-t border-ttBorder relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-xs font-bold text-ttCyan tracking-widest uppercase mb-2">Público-Alvo</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Essa Consultoria é Perfeita Para Você Que...</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-ttCard border border-ttBorder rounded-2xl p-8 relative hover:border-ttPink/50 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-xl bg-ttPink/10 text-ttPink flex items-center justify-center text-2xl mb-6 group-hover:bg-ttPink group-hover:text-white transition-all">
+                        <i class="fa-solid fa-user-xmark"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Está Começando do Absoluto Zero</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Não sabe qual produto escolher, como criar a conta correta no TikTok Shop ou tem receio por ter poucos ou nenhum seguidor.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-ttCard border border-ttBorder rounded-2xl p-8 relative hover:border-ttCyan/50 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-xl bg-ttCyan/10 text-ttCyan flex items-center justify-center text-2xl mb-6 group-hover:bg-ttCyan group-hover:text-black transition-all">
+                        <i class="fa-solid fa-chart-line-down"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Gera Views mas Não Faz Vendas</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Seus vídeos alcançam visualizações, mas as pessoas não clicam no link do produto e o carrinho continua vazio ao final do dia.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-ttCard border border-ttBorder rounded-2xl p-8 relative hover:border-ttPink/50 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-xl bg-ttPink/10 text-ttPink flex items-center justify-center text-2xl mb-6 group-hover:bg-ttPink group-hover:text-white transition-all">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Não Quer Perder Tempo com Erros</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Quer um passo a passo direto ao ponto, com acompanhamento de quem já testou e sabe o que realmente funciona hoje.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: O Que Você Vai Aprender (Cronograma da Consultoria) -->
+    <section class="py-20 bg-slate-950 border-t border-ttBorder">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-xs font-bold text-ttPink tracking-widest uppercase mb-2">Estrutura Completa</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">O Passo a Passo da Nossa Sessão</h3>
+                <p class="text-gray-400 mt-3 max-w-xl mx-auto text-sm sm:text-base">Análise estratégica focada na execução prática para destravar seu faturamento rapidamente.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Módulo 1 -->
+                <div class="flex gap-5 p-6 rounded-2xl bg-ttCard border border-ttBorder hover:border-slate-700 transition-all">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-tr from-ttCyan to-blue-600 text-black font-extrabold flex items-center justify-center text-xl">
+                        1
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-2">Configuração & Estrutura Anti-Bloqueio</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Ajuste correto das configurações do TikTok Shop, requisitos essenciais, integração com loja/afiliação e como manter a conta 100% segura.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Módulo 2 -->
+                <div class="flex gap-5 p-6 rounded-2xl bg-ttCard border border-ttBorder hover:border-slate-700 transition-all">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-tr from-ttPink to-rose-600 text-white font-extrabold flex items-center justify-center text-xl">
+                        2
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-2">Mineração de Produtos Campeões</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Como identificar produtos com alto potencial de viralização no TikTok Shop, alta margem de lucro e apelo visual imediato.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Módulo 3 -->
+                <div class="flex gap-5 p-6 rounded-2xl bg-ttCard border border-ttBorder hover:border-slate-700 transition-all">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-tr from-ttPink to-purple-600 text-white font-extrabold flex items-center justify-center text-xl">
+                        3
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-2">Roteiros & Vídeos de Alta Conversão</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Ganchos (hooks) nos primeiros 3 segundos para prender a atenção, retenção estratégica e Calls to Action irresistíveis no vídeo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Módulo 4 -->
+                <div class="flex gap-5 p-6 rounded-2xl bg-ttCard border border-ttBorder hover:border-slate-700 transition-all">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-tr from-ttCyan to-emerald-400 text-black font-extrabold flex items-center justify-center text-xl">
+                        4
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-2">Tráfego Orgânico & Algoritmo</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Como funciona a entrega orgânica do TikTok Shop, horários estratégicos e como impulsionar suas postagens gastando quase nada.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Bônus Exclusivos -->
+    <section class="py-20 bg-ttDark border-t border-ttBorder">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="bg-ttPink/20 text-ttPink text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Incluso Gratuitamente</span>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white mt-4">Bônus Exclusivos para Você</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Bônus 1 -->
+                <div class="bg-ttCard border border-ttBorder/80 rounded-2xl p-6 relative overflow-hidden group hover:border-ttPink/50 transition">
+                    <div class="text-ttPink mb-4 text-3xl">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Pack com 10 Scripts de Alta Conversão</h4>
+                    <p class="text-gray-400 text-sm">Modelos de roteiros "copie e cole" validados para narrativas de vendas e reviews de produtos.</p>
+                </div>
+
+                <!-- Bônus 2 -->
+                <div class="bg-ttCard border border-ttBorder/80 rounded-2xl p-6 relative overflow-hidden group hover:border-ttCyan/50 transition">
+                    <div class="text-ttCyan mb-4 text-3xl">
+                        <i class="fa-solid fa-square-check"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Checklist de Validação de Produto</h4>
+                    <p class="text-gray-400 text-sm">Planilha de verificação rápida para saber se um produto tem potencial viral antes de postar.</p>
+                </div>
+
+                <!-- Bônus 3 -->
+                <div class="bg-ttCard border border-ttBorder/80 rounded-2xl p-6 relative overflow-hidden group hover:border-ttPink/50 transition">
+                    <div class="text-ttPink mb-4 text-3xl">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">7 Dias de Suporte via WhatsApp</h4>
+                    <p class="text-gray-400 text-sm">Tire dúvidas diretamente comigo durante o processo de aplicação das estratégias pós-consultoria.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Sobre o Consultor / Mentor -->
+    <section class="py-20 bg-slate-950 border-t border-ttBorder">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-ttCard border border-ttBorder rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center gap-10">
+                <div class="relative flex-shrink-0">
+                    <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-2xl overflow-hidden border-2 border-ttCyan relative z-10">
+                        <!-- Imagem de perfil do Mentor com fallback -->
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" 
+                             alt="Mentor TikTok Shop" 
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x400/0f172a/00f2fe?text=Especialista';">
+                    </div>
+                    <div class="absolute -bottom-3 -right-3 w-44 h-44 sm:w-52 sm:h-52 rounded-2xl bg-ttPink/20 -z-0"></div>
+                </div>
+
+                <div class="text-center md:text-left">
+                    <span class="text-ttCyan text-sm font-bold uppercase tracking-wider">Seu Mentor</span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-4">Especialista em Vendas no TikTok</h3>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
+                        "Já passei pelo momento de postar dezenas de vídeos e ver o saldo zerado. Após testar dezenas de estratégias, desenvolvi uma metodologia simplificada para criar conteúdos que o algoritmo ama e que convertem seguidores em compradores reais. Minha missão na consultoria é encurtar o seu caminho rumo à primeira venda."
+                    </p>
+                    <div class="flex items-center justify-center md:justify-start gap-4">
+                        <div class="flex items-center gap-1 text-amber-400">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs text-gray-400 font-semibold">4.9/5 em Avaliações de Alunos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Oferta / Preço -->
+    <section id="oferta" class="py-20 bg-ttDark border-t border-ttBorder relative">
+        <!-- Glow Effect -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-ttPink/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <span class="bg-ttPink/20 text-ttPink border border-ttPink/30 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
+                    <i class="fa-solid fa-fire mr-1"></i> Vagas Limitadas para esta semana
+                </span>
+                <h3 class="text-3xl sm:text-5xl font-black text-white mt-4">Garanta Sua Consultoria Individual</h3>
+                <p class="text-gray-400 mt-2">Escolha o melhor momento para destravar o seu TikTok Shop</p>
+            </div>
+
+            <!-- Card de Preço -->
+            <div class="bg-slate-900 border-2 border-ttPink/80 rounded-3xl p-8 sm:p-12 shadow-2xl relative glow-box">
+                <div class="absolute -top-4 right-8 bg-gradient-to-r from-ttPink to-ttCyan text-black font-extrabold text-xs px-4 py-1 rounded-full uppercase tracking-wider shadow-md">
+                    Oportunidade Única
+                </div>
+
+                <div class="text-center pb-8 border-b border-ttBorder">
+                    <h4 class="text-2xl font-bold text-white mb-2">Consultoria 1 para 1 + Bônus</h4>
+                    <p class="text-gray-400 text-sm">Sessão ao vivo via Zoom/Google Meet com análise individual</p>
+                    
+                    <div class="mt-6 flex items-center justify-center gap-2">
+                        <span class="text-gray-500 line-through text-lg font-medium">De R$ 497,00</span>
+                    </div>
+                    <div class="flex items-baseline justify-center gap-1 mt-1">
+                        <span class="text-gray-300 text-xl font-bold">Por apenas</span>
+                        <span class="text-4xl sm:text-6xl font-black text-white">R$ 197</span>
+                        <span class="text-gray-400 text-sm font-semibold">,00</span>
+                    </div>
+                    <p class="text-ttCyan text-xs mt-2 font-medium"><i class="fa-solid fa-shield-halved mr-1"></i> Pagamento único ou até 12x no cartão</p>
+                </div>
+
+                <!-- O que está incluso -->
+                <div class="py-8 space-y-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-ttCyan text-lg mt-0.5"></i>
+                        <span class="text-gray-200 text-sm sm:text-base">1h de Call Individual e Exclusiva (gravada para você)</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-ttCyan text-lg mt-0.5"></i>
+                        <span class="text-gray-200 text-sm sm:text-base">Análise e Validação do seu Perfil / Nicotina de Produto</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-ttCyan text-lg mt-0.5"></i>
+                        <span class="text-gray-200 text-sm sm:text-base">Análise de Roteiro e Plano de Ação para o Primeiro Vídeo</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-ttPink text-lg mt-0.5"></i>
+                        <span class="text-gray-200 text-sm sm:text-base font-semibold text-white">Bônus: Pack de 10 Scripts Prontos + Planilha de Validação</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-ttPink text-lg mt-0.5"></i>
+                        <span class="text-gray-200 text-sm sm:text-base font-semibold text-white">Bônus: 7 dias de Acompanhamento via WhatsApp</span>
+                    </div>
+                </div>
+
+                <!-- Botão CTA Checkout / WhatsApp -->
+                <a href="https://wa.me/5500000000000?text=Olá,%20quero%20agendar%20minha%20consultoria%20do%20TikTok%20Shop!" 
+                   target="_blank" 
+                   class="w-full btn-gradient text-white text-xl font-extrabold py-5 rounded-2xl shadow-xl flex items-center justify-center gap-3 group">
+                    <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+                    <span>AGENDAR CONSULTORIA AGORA</span>
+                </a>
+
+                <p class="text-center text-xs text-gray-500 mt-4">
+                    <i class="fa-solid fa-lock mr-1"></i> Agendamento seguro diretamente pelo WhatsApp oficial
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Perguntas Frequentes (FAQ) -->
+    <section class="py-20 bg-slate-950 border-t border-ttBorder">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-xs font-bold text-ttCyan tracking-widest uppercase mb-2">Tire suas dúvidas</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Perguntas Frequentes</h3>
+            </div>
+
+            <div class="space-y-4" id="faq-accordion">
+                <!-- FAQ Item 1 -->
+                <div class="bg-ttCard border border-ttBorder rounded-xl overflow-hidden transition">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center font-bold text-white hover:text-ttCyan focus:outline-none">
+                        <span>Preciso ter muitos seguidores para começar no TikTok Shop?</span>
+                        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-ttBorder/40 pt-4">
+                        Não! Essa é a melhor parte. O algoritmo do TikTok entrega seus vídeos para pessoas interessadas baseando-se no conteúdo e no produto, e não na sua quantidade de seguidores. Mostrarei exatamente como começar do zero.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-ttCard border border-ttBorder rounded-xl overflow-hidden transition">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center font-bold text-white hover:text-ttCyan focus:outline-none">
+                        <span>Como é realizada a consultoria?</span>
+                        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-ttBorder/40 pt-4">
+                        A consultoria é 100% online, individual e ao vivo através do Zoom ou Google Meet. Agendamos o melhor horário para você e a reunião fica gravada para você assistir sempre que quiser.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-ttCard border border-ttBorder rounded-xl overflow-hidden transition">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center font-bold text-white hover:text-ttCyan focus:outline-none">
+                        <span>Em quanto tempo terei meus primeiros resultados?</span>
+                        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-ttBorder/40 pt-4">
+                        Aplicando a estrutura de roteiros e mineração de produtos ensinada, é comum que os alunos façam suas primeiras vendas nos primeiros vídeos postados após a reunião.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-ttCard border border-ttBorder rounded-xl overflow-hidden transition">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center font-bold text-white hover:text-ttCyan focus:outline-none">
+                        <span>E se eu tiver dúvidas após a reunião?</span>
+                        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-ttBorder/40 pt-4">
+                        Você terá 7 dias de suporte direto comigo via WhatsApp para tirar dúvidas sobre a gravação de vídeos, escolha de produtos ou ajustes de estratégia.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="py-12 bg-ttDark border-t border-ttBorder text-center text-xs text-gray-500">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-center items-center gap-2 mb-4">
+                <div class="w-6 h-6 rounded-full bg-gradient-to-tr from-ttPink to-ttCyan flex items-center justify-center font-bold text-black text-xs">
+                    <i class="fa-brands fa-tiktok text-white text-xs"></i>
+                </div>
+                <span class="font-bold text-sm text-white">TikTok Shop Pro</span>
+            </div>
+            <p class="mb-4">Este site não faz parte do TikTok ou da ByteDance Ltd. Todos os direitos reservados.</p>
+            <p>© 2026 Consultoria TikTok Shop. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interativo do FAQ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggles = document.querySelectorAll('.faq-toggle');
+
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('i');
+
+                    // Fecha outros abertos (comportamento de sanfona)
+                    document.querySelectorAll('.faq-content').forEach(item => {
+                        if (item !== content) {
+                            item.classList.add('hidden');
+                            item.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Alterna o atual
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        content.classList.add('hidden');
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
